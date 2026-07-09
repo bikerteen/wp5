@@ -5,7 +5,7 @@ import { IBM_Plex_Mono } from "next/font/google";
 import { useEffect, useId, useState } from "react";
 
 const BOOKING_URL =
-  "https://tickts.co.uk/events/waldorf-project-chapter-fivekaihogyo?d=20261119&t=18%3A30";
+  "https://tickts.co.uk/events/waldorf-project-chapter-fivekaihogyo";
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -82,7 +82,7 @@ export default function BookingExperience() {
         <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
         <div className="film-grain absolute inset-0 opacity-[0.16]" />
 
-        <header className="relative z-10 flex shrink-0 items-start justify-between gap-5 px-6 py-6 sm:px-10 sm:py-9 lg:px-12">
+        <header className="relative z-10 flex shrink-0 items-start px-6 py-6 sm:px-10 sm:py-9 lg:px-12">
           <Image
             src="/Logo.png"
             alt="The Waldorf Project"
@@ -91,34 +91,12 @@ export default function BookingExperience() {
             priority
             className="h-auto w-28 opacity-70 sm:w-52 lg:w-[258px]"
           />
-
-          <button
-            type="button"
-            onClick={openBooking}
-            className="book-button display-type hidden min-h-14 min-w-32 cursor-pointer items-center justify-center bg-white/16 px-6 py-3 text-center uppercase text-white backdrop-blur-[1px] transition duration-200 hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:flex sm:min-h-16 sm:min-w-52 sm:px-10"
-            aria-label="Book now"
-          >
-            <span className="block text-[clamp(1.15rem,2.1vw,2.1rem)] leading-none">
-              Book Now
-            </span>
-          </button>
         </header>
 
-        <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-6 pb-20 pt-10 text-center sm:px-10 sm:pb-24 sm:pt-0 lg:px-12">
+        <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center px-6 pb-20 pt-10 text-center sm:px-10 sm:pb-24 sm:pt-0 lg:px-12">
           <h1 className="display-type max-w-full text-balance text-[clamp(2.5rem,7.25vw,7.6rem)] uppercase leading-[0.9] text-white drop-shadow-[0_2px_22px_rgba(0,0,0,0.75)]">
             Chapter Five/Kaihoygo
           </h1>
-
-          <button
-            type="button"
-            onClick={openBooking}
-            className="book-button display-type flex min-h-12 min-w-28 cursor-pointer items-center justify-center bg-white/16 px-6 py-2.5 text-center uppercase text-white backdrop-blur-[1px] transition duration-200 hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:hidden"
-            aria-label="Book now"
-          >
-            <span className="block text-[clamp(1rem,4vw,1.15rem)] leading-none">
-              Book Now
-            </span>
-          </button>
         </div>
 
         <a
@@ -145,7 +123,7 @@ export default function BookingExperience() {
           <p>
             November 19th &ndash; December 20th
             <br />
-            &bull; Ticket price: &pound;85
+            &bull; Ticket price: &pound;85 (including booking fee)
             <br />
             &bull; Venue &ndash; Secret (islington)
             <br />
