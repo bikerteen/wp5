@@ -1,9 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import { IBM_Plex_Mono } from "next/font/google";
 import { useEffect, useId, useState } from "react";
 
-const BOOKING_URL = "#booking-platform";
+const BOOKING_URL =
+  "https://tickts.co.uk/events/waldorf-project-chapter-fivekaihogyo?d=20261119&t=18%3A30";
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const disclaimerSections = [
   {
@@ -14,7 +21,7 @@ const disclaimerSections = [
     ],
   },
   {
-    title: "1. Disclaimer",
+    title: "1. Disclaimer of Health and Safety",
     body: [
       "1.1 Participating as a member of the audience for the production is a physically challenging interactive experience and for your own safety you should be in good health, free of any medical conditions which could be aggravated by the journey, and be able to walk and stand for periods of time unaided.",
       "1.2 The production takes place in an industrial building (the \"Venue\"). As part of the audience experience, you will be required to walk around the Venue in low light and occasionally in darkness, also occasionally with bright lights. The production may therefore be unsuitable for persons who suffer from any fear of darkness or claustrophobia. Whilst Waldorf Project have taken reasonable precautions to make the Venue safe and secure, it is your responsibility to take care of yourself whilst walking around the Venue.",
@@ -59,58 +66,173 @@ export default function BookingExperience() {
   };
 
   return (
-    <main className="relative isolate flex h-dvh flex-col overflow-hidden bg-black text-white selection:bg-white selection:text-black">
-      <Image
-        src="/bg.jpg"
-        alt="Shadowed figures walking through The Waldorf Project installation"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[50%_47%]"
-      />
-      <div className="absolute inset-0 bg-black/15" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_51%_45%,transparent_0,rgba(0,0,0,0.07)_36%,rgba(0,0,0,0.55)_100%)]" />
-      <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-black/65 via-black/25 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-      <div className="film-grain absolute inset-0 opacity-[0.16]" />
-
-      <header className="relative z-10 flex shrink-0 items-start justify-between gap-5 px-6 py-6 sm:px-10 sm:py-9 lg:px-12">
+    <main className="relative isolate min-h-dvh bg-black text-white selection:bg-white selection:text-black">
+      <section className="relative flex h-dvh flex-col overflow-hidden">
         <Image
-          src="/Logo.png"
-          alt="The Waldorf Project"
-          width={258}
-          height={76}
+          src="/bg.jpg"
+          alt="Shadowed figures walking through The Waldorf Project installation"
+          fill
           priority
-          className="h-auto w-28 opacity-70 sm:w-52 lg:w-[258px]"
+          sizes="100vw"
+          className="object-cover object-[50%_47%]"
         />
+        <div className="absolute inset-0 bg-black/15" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_51%_45%,transparent_0,rgba(0,0,0,0.07)_36%,rgba(0,0,0,0.55)_100%)]" />
+        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-black/65 via-black/25 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+        <div className="film-grain absolute inset-0 opacity-[0.16]" />
 
-        <button
-          type="button"
-          onClick={openBooking}
-          className="book-button display-type hidden min-h-14 min-w-32 cursor-pointer items-center justify-center bg-white/16 px-6 py-3 text-center uppercase text-white backdrop-blur-[1px] transition duration-200 hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:flex sm:min-h-16 sm:min-w-52 sm:px-10"
-          aria-label="Book now"
+        <header className="relative z-10 flex shrink-0 items-start justify-between gap-5 px-6 py-6 sm:px-10 sm:py-9 lg:px-12">
+          <Image
+            src="/Logo.png"
+            alt="The Waldorf Project"
+            width={258}
+            height={76}
+            priority
+            className="h-auto w-28 opacity-70 sm:w-52 lg:w-[258px]"
+          />
+
+          <button
+            type="button"
+            onClick={openBooking}
+            className="book-button display-type hidden min-h-14 min-w-32 cursor-pointer items-center justify-center bg-white/16 px-6 py-3 text-center uppercase text-white backdrop-blur-[1px] transition duration-200 hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:flex sm:min-h-16 sm:min-w-52 sm:px-10"
+            aria-label="Book now"
+          >
+            <span className="block text-[clamp(1.15rem,2.1vw,2.1rem)] leading-none">
+              Book Now
+            </span>
+          </button>
+        </header>
+
+        <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-6 pb-20 pt-10 text-center sm:px-10 sm:pb-24 sm:pt-0 lg:px-12">
+          <h1 className="display-type max-w-full text-balance text-[clamp(2.5rem,7.25vw,7.6rem)] uppercase leading-[0.9] text-white drop-shadow-[0_2px_22px_rgba(0,0,0,0.75)]">
+            Chapter Five/Kaihoygo
+          </h1>
+
+          <button
+            type="button"
+            onClick={openBooking}
+            className="book-button display-type flex min-h-12 min-w-28 cursor-pointer items-center justify-center bg-white/16 px-6 py-2.5 text-center uppercase text-white backdrop-blur-[1px] transition duration-200 hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:hidden"
+            aria-label="Book now"
+          >
+            <span className="block text-[clamp(1rem,4vw,1.15rem)] leading-none">
+              Book Now
+            </span>
+          </button>
+        </div>
+
+        <a
+          href="#event-information"
+          className="display-type absolute inset-x-0 bottom-5 z-10 mx-auto flex w-fit flex-col items-center gap-2 px-5 py-2 text-center uppercase text-white/90 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:bottom-7"
+          aria-label="Proceed to event information"
         >
-          <span className="block text-[clamp(1.15rem,2.1vw,2.1rem)] leading-none">
-            Book Now
+          <span className="text-[clamp(1rem,2vw,1.3rem)] leading-none">
+            Proceed
           </span>
-        </button>
-      </header>
+          <span className="text-4xl leading-none" aria-hidden="true">
+            &darr;
+          </span>
+        </a>
+      </section>
 
-      <section className="relative z-10 flex min-h-0 flex-1 flex-col items-start justify-end gap-4 px-6 pb-6 sm:px-10 sm:pb-8 lg:px-12">
-        <h1 className="display-type max-w-full text-balance text-[clamp(2.25rem,7.25vw,7.6rem)] uppercase leading-[0.86] text-white drop-shadow-[0_2px_22px_rgba(0,0,0,0.75)]">
-          Chapter Five/Kaihoygo
-        </h1>
-
-        <button
-          type="button"
-          onClick={openBooking}
-          className="book-button display-type flex min-h-12 min-w-28 cursor-pointer items-center justify-center bg-white/16 px-6 py-2.5 text-center uppercase text-white backdrop-blur-[1px] transition duration-200 hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:hidden"
-          aria-label="Book now"
+      <section
+        id="event-information"
+        className="bg-black px-6 py-16 text-white sm:px-10 sm:py-20 lg:px-12"
+      >
+        <div
+          className={`${ibmPlexMono.className} mx-auto max-w-5xl text-[0.78rem] leading-[1.35] text-white/88 sm:text-sm`}
         >
-          <span className="block text-[clamp(1rem,4vw,1.15rem)] leading-none">
-            Book Now
-          </span>
-        </button>
+          <p>
+            November 19th &ndash; December 20th
+            <br />
+            &bull; Ticket price: &pound;85
+            <br />
+            &bull; Venue &ndash; Secret (islington)
+            <br />
+            &bull; 40 guests per night
+            <br />
+            &bull; 6:30pm to 10pm
+          </p>
+
+          <div className="mt-7 space-y-5">
+            <p>
+              The Waldorf Project is staged under the concept of a Japanese
+              emotion called &quot;AMAE&quot;, which means &quot;a temporary
+              surrender in perfect safety&quot;. The Project is an experimental
+              performance which deals with a spectrum of emotional experiences,
+              ranging from the gentle to the more dark - but always, in a
+              context in which you should feel safe. This performance however,
+              is NOT for everyone.
+            </p>
+
+            <p>
+              We insist you DON&apos;T buy a ticket if you suffer from;
+              Nyctophobia - Fear of the dark / Aphenphosmphobia - Fear of being
+              touched / Claustrophobia - fear of confined or enclosed spaces
+              /Asthma.
+            </p>
+
+            <p>
+              We are unable to admit women at any stage of pregnancy. We are
+              unable to admit guests with casts for broken appendages.
+            </p>
+
+            <p>
+              You will be required to change out of your clothes upon arrival
+              into our uniform. You will be required to remove your socks and
+              shoes.
+            </p>
+
+            <p>
+              Please wear NO perfume/cologne /NO jewelry (rings, bracelets,
+              earrings or necklaces), NO watches. If you have long hair you must
+              pull it back in a ponytail or headband.
+              <br />
+              Please arrive on time, as latecomers cannot be admitted.
+              Admittance and sales of tickets to guests 18 years or older.
+            </p>
+
+            <p>
+              The event includes an element of audience participation and
+              interacting with an industrial environment. Even though there is no
+              reason why anyone should suffer any injury, please be aware that
+              you are entering the space and experiencing the event entirely at
+              your own risk.
+            </p>
+
+            <p>
+              As this an interactive performance, you will be required to check
+              all handbags, coats, phones, watches and jewelry. Although great
+              care will be taken to monitor the cloak room, please be advised
+              you are checking all items at your own risk and we strongly advise
+              for you to leave as many of these items as you can at home.
+            </p>
+
+            <p>
+              Accessibility: Please note that many elements of the experience
+              will involve some physical activity and moving between different
+              parts of a large environment. Unfortunately, due to complexity of
+              the industrial space we are unable to accommodate guests in
+              wheelchairs or using crutches.
+            </p>
+
+            <p>
+              Please <span className="underline underline-offset-2">contact us</span>{" "}
+              before booking a ticket if you have any questions.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={openBooking}
+            className="book-button display-type mt-10 flex min-h-12 w-full max-w-56 cursor-pointer items-center justify-center bg-white/16 px-6 py-3 text-center uppercase text-white backdrop-blur-[1px] transition duration-200 hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:min-h-14"
+            aria-label="Book now"
+          >
+            <span className="block text-[clamp(1rem,3vw,1.45rem)] leading-none">
+              Book Now
+            </span>
+          </button>
+        </div>
       </section>
 
       {isOpen ? (

@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${postNoBillsColombo.variable} h-full overflow-hidden antialiased`}
+      className={`${postNoBillsColombo.variable} min-h-full scroll-smooth antialiased`}
     >
-      <body className="h-full overflow-hidden flex flex-col overscroll-none">{children}</body>
+      <body className="min-h-full bg-black">{children}</body>
     </html>
   );
 }
