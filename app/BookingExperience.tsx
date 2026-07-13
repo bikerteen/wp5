@@ -144,7 +144,7 @@ export default function BookingExperience() {
               emotion called &quot;AMAE&quot;, which means &quot;a temporary
               surrender in perfect safety&quot;. The Project is an experimental
               performance which deals with a spectrum of emotional experiences,
-              ranging from the gentle to the more dark - but always, in a
+              ranging from the gentle to the more intense - but always, in a
               context in which you should feel safe.
             </p>
 
@@ -194,7 +194,7 @@ export default function BookingExperience() {
             <p>
               Accessibility: Please note that many elements of the experience
               will involve some physical activity and moving between different
-              parts of a large environment. Unfortunately, due to complexity of
+              parts of a large environment. Unfortunately, due to the complexity of
               the industrial space we are unable to accommodate guests in
               wheelchairs or using crutches.
             </p>
