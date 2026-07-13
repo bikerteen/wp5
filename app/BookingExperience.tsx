@@ -82,7 +82,7 @@ export default function BookingExperience() {
         <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
         <div className="film-grain absolute inset-0 opacity-[0.16]" />
 
-        <header className="relative z-10 flex shrink-0 items-start justify-between gap-5 px-6 py-6 sm:px-10 sm:py-9 lg:px-12">
+        <header className="relative z-10 flex shrink-0 items-start px-6 py-6 sm:px-10 sm:py-9 lg:px-12">
           <Image
             src="/Logo.png"
             alt="The Waldorf Project"
@@ -91,36 +91,14 @@ export default function BookingExperience() {
             priority
             className="h-auto w-28 opacity-70 sm:w-52 lg:w-[258px]"
           />
-
-          <button
-            type="button"
-            onClick={openBooking}
-            className="book-button display-type hidden min-h-14 min-w-32 cursor-pointer items-center justify-center bg-white/16 px-6 py-3 text-center uppercase text-white backdrop-blur-[1px] transition duration-200 hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:flex sm:min-h-16 sm:min-w-52 sm:px-10"
-            aria-label="Book now"
-          >
-            <span className="block text-[clamp(1.15rem,2.1vw,2.1rem)] leading-none">
-              Book Now
-            </span>
-          </button>
         </header>
 
-        <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-6 pb-20 pt-10 text-center sm:px-10 sm:pb-24 sm:pt-0 lg:px-12">
+        <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center px-6 pb-20 pt-10 text-center sm:px-10 sm:pb-24 sm:pt-0 lg:px-12">
           <h1 className="display-type max-w-full text-balance text-[clamp(2.5rem,7.25vw,7.6rem)] uppercase leading-[0.9] text-white drop-shadow-[0_2px_22px_rgba(0,0,0,0.75)]">
             <span>Chapter Five/</span>
             <br className="sm:hidden" />
-            <span>Kaihoygo</span>
+            <span>KAIHOGYO</span>
           </h1>
-
-          <button
-            type="button"
-            onClick={openBooking}
-            className="book-button display-type flex min-h-12 min-w-28 cursor-pointer items-center justify-center bg-white/16 px-6 py-2.5 text-center uppercase text-white backdrop-blur-[1px] transition duration-200 hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:hidden"
-            aria-label="Book now"
-          >
-            <span className="block text-[clamp(1rem,4vw,1.15rem)] leading-none">
-              Book Now
-            </span>
-          </button>
         </div>
 
         <a
@@ -135,6 +113,10 @@ export default function BookingExperience() {
             &darr;
           </span>
         </a>
+
+        <p className="absolute bottom-4 right-4 z-10 max-w-[10rem] text-right font-mono text-[0.62rem] uppercase leading-tight text-white/55 sm:bottom-6 sm:right-8 sm:max-w-none sm:text-xs">
+          *image from previous chapter
+        </p>
       </section>
 
       <section
@@ -149,7 +131,7 @@ export default function BookingExperience() {
             <br />
             &bull; Ticket price: &pound;85 (inc. booking fee)
             <br />
-            &bull; Venue - &ndash; Islington (Secret)
+            &bull; Venue &ndash; Islington (Secret)
             <br />
             &bull; 40 guests per night
             <br />
@@ -163,7 +145,7 @@ export default function BookingExperience() {
               surrender in perfect safety&quot;. The Project is an experimental
               performance which deals with a spectrum of emotional experiences,
               ranging from the gentle to the more dark - but always, in a
-              context in which you should feel safe. 
+              context in which you should feel safe.
             </p>
 
             <p>
@@ -221,7 +203,7 @@ export default function BookingExperience() {
               Please{" "}
               <a
                 href="mailto:info@waldorfproject.com"
-                className="underline underline-offset-2 transition hover:text-white"
+                className="underline decoration-white decoration-1 underline-offset-2 transition hover:text-white"
               >
                 contact us
               </a>{" "}
@@ -303,8 +285,14 @@ export default function BookingExperience() {
                   type="checkbox"
                   checked={hasConfirmed}
                   onChange={(event) => setHasConfirmed(event.target.checked)}
-                  className="mt-1 size-4 shrink-0 accent-white"
+                  className="peer sr-only"
                 />
+                <span
+                  className="mt-0.5 flex size-5 shrink-0 items-center justify-center border border-white/80 bg-black text-base font-bold leading-none text-[#39ff88] shadow-[0_0_0_1px_rgb(255_255_255/0.28)] peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-[#39ff88]"
+                  aria-hidden="true"
+                >
+                  {hasConfirmed ? "\u2713" : ""}
+                </span>
                 <span>
                   I confirm that I have read and accept the information above.
                 </span>
