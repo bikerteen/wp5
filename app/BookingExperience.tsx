@@ -114,9 +114,9 @@ export default function BookingExperience() {
           </span>
         </a>
 
-        <p className="absolute bottom-4 right-4 z-10 max-w-[10rem] text-right font-mono text-[0.62rem] uppercase leading-tight text-white/55 sm:bottom-6 sm:right-8 sm:max-w-none sm:text-xs">
+        {/* <p className="absolute bottom-4 right-4 z-10 max-w-[10rem] text-right font-mono text-[0.62rem] uppercase leading-tight text-white/55 sm:bottom-6 sm:right-8 sm:max-w-none sm:text-xs">
           *image from previous chapter
-        </p>
+        </p> */}
       </section>
 
       <section
@@ -188,7 +188,7 @@ export default function BookingExperience() {
               all handbags, coats, phones, watches and jewelry. Although great
               care will be taken to monitor the cloak room, please be advised
               you are checking all items at your own risk and we strongly advise
-              for you to leave as many of these items as you can at home.
+              you to leave as many of these items as you can at home.
             </p>
 
             <p>
