@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const postNoBillsColombo = localFont({
@@ -24,7 +25,10 @@ export default function RootLayout({
       lang="en"
       className={`${postNoBillsColombo.variable} min-h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full bg-black">{children}</body>
+      <body className="min-h-full bg-black">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
